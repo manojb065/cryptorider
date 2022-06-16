@@ -3,6 +3,10 @@ import RideList from './RideList'
 
 class Dashboard extends Component {
   constructor(props, { authData }) {
+    console.log("*****************************************************************")
+    console.log(authData)
+    console.log(props)
+    console.log("*****************************************************************")
     super(props)
     authData = this.props
   }

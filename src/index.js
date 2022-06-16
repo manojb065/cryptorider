@@ -38,6 +38,10 @@ ReactDOM.render((
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Landing} />
+          {
+          console.log(UserIsAuthenticated(Dashboard),"*************************")
+          }
+          {/* <Route path="dashboard"/> */}
           <Route path="dashboard" component={UserIsAuthenticated(Dashboard)} />
           <Route path="signup" component={UserIsNotAuthenticated(SignUp)} />
           <Route path="profile" component={UserIsAuthenticated(Profile)} />

@@ -103,10 +103,6 @@ class RideDetails extends Component {
       let passengerState = this.state.passengerState;
       let passengerStates = this.state.passengerStates;
       let passenger = this.state.passenger;
-      console.log("----------------------------------------------------------")
-      console.log(isPassenger)
-      console.log(isDriver)
-      console.log("----------------------------------------------------------")
 
       if (isPassenger) {
         let confirmDriverMet;
@@ -130,10 +126,6 @@ class RideDetails extends Component {
           </main>
         )
       } else if (isDriver) {
-        console.log("*****************************************************************")
-        console.log(passengerStates)
-        console.log(passengerStates.length)
-        console.log("*****************************************************************")
         if (passengerStates.length === 0) {
           return (<p>Loading... from driver</p>)
         } else {
@@ -146,9 +138,11 @@ class RideDetails extends Component {
 
                   {passengerStates.length === 0 ? '' : passengerStates.map((passengerState, i) => {
                     return (
-                      <p>{passenger[i]} {passengerState}</p>
+                      <p>{passenger[i]} {s[passengerState['c'][0]]}</p>
                     )
-                  })}
+                  })
+                  
+                  }
 
                   <ConfirmPassengersMetContainer ride_number={rideId} />
                 </div>
